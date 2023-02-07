@@ -65,6 +65,9 @@ const AllocationForm = (props) => {
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem' , size: 10}}
+                        onKeyPress={(event) =>
+                            {if (!/[0-9]/.test(event.key))
+                                {event.preventDefault();}}}
                         onChange={(event) => setCost(event.target.value)}>
                         </input>
 
