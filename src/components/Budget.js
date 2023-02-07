@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
-    const { budget,dispatch,expenses } = useContext(AppContext);
+    const { budget,dispatch,expenses,currency } = useContext(AppContext);
 
     const changeBudget = (val)=>{
         const totalExpenses = expenses.reduce((total, item) => {
@@ -22,7 +22,7 @@ const Budget = () => {
     
     return (
         <div className='alert alert-secondary'>
-            Budget £
+            Budget {currency}
         <input type="number" step="10" value={budget} onInput={(event)=>changeBudget(event.target.value)}>
         </input>
         </div>
